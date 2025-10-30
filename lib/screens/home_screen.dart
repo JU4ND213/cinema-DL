@@ -7,7 +7,7 @@ import 'search_delegate.dart';
 import 'favorites_screen.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -53,19 +53,21 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Consumer<MovieProvider>(
         builder: (_, prov, __) {
-          if (prov.movies.isEmpty && prov.isLoading)
+          if (prov.movies.isEmpty && prov.isLoading) {
             return Center(child: CircularProgressIndicator());
+          }
           return ListView.builder(
             controller: _controller,
             itemCount: prov.movies.length + (prov.hasMore ? 1 : 0),
             itemBuilder: (_, idx) {
-              if (idx >= prov.movies.length)
+              if (idx >= prov.movies.length) {
                 return Center(
                   child: Padding(
                     padding: EdgeInsets.all(16),
                     child: CircularProgressIndicator(),
                   ),
                 );
+              }
               final movie = prov.movies[idx];
               return MovieCard(
                 movie: movie,
