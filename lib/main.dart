@@ -17,7 +17,7 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   final FavoritesProvider favProv;
-  const MyApp({required this.favProv, Key? key}) : super(key: key);
+  const MyApp({required this.favProv, super.key});
 
   @override
   Widget build(BuildContext context) {

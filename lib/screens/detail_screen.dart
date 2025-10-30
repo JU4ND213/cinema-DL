@@ -8,7 +8,7 @@ import '../providers/favorites_provider.dart';
 
 class DetailScreen extends StatefulWidget {
   final int movieId;
-  const DetailScreen({required this.movieId, Key? key}) : super(key: key);
+  const DetailScreen({required this.movieId, super.key});
 
   @override
   State<DetailScreen> createState() => _DetailScreenState();
